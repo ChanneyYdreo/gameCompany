@@ -635,6 +635,32 @@ section {
   text-decoration: none;
 }
 
+.about {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.about {
+  transition: transform 1s;
+  transform: rotateY(360deg); /* Initial reversed state */
+}
+.about.flip {
+  transform: rotateY(0deg); /* Flipped state */
+}
+
+.animate__shakeX {
+  animation: shakeX 0.5s;
+}
+
+@keyframes shakeX {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-5px); /* Adjust the shaking distance */
+  }
+}
 /*--------------------------------------------------------------
 # Counts
 --------------------------------------------------------------*/
