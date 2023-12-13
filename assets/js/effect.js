@@ -4,14 +4,10 @@ function EscapingText(i) {
   var that = this;
   var arr = [];
   var element = $(".effect")[0];
-  console.log(element);
-  var text = element.child;
-  text.split("").forEach(t => {
-    if (t == "|") {
-      arr.push("br");
-    } else {
-      arr.push(t);
-    }
+  console.log(element.innerHTML);
+  var text = element.innerHTML;
+  text.split("|").forEach(t => {
+    arr.push(t);
   });
 
   this.invert = false;
@@ -208,19 +204,32 @@ function EscapingText(i) {
     that.getDim();
   };
 }
-var paragraph = new EscapingText("effect");
-
-var render = function (time) {
-  requestAnimationFrame(render);
-  animation(time);
-};
-
-//__________ animation
-
-function animation(time) {
-  paragraph.update();
-}
-
 //__________
+setTimeout(() => {
+  var paragraph = new EscapingText("effect");
 
-render(time);
+  var render = function (time) {
+    requestAnimationFrame(render);
+    animation(time);
+  };
+
+  //__________ animation
+
+  function animation(time) {
+    paragraph.update();
+  }
+
+  render(time);
+}, 200);
+
+setInterval(() => {
+  var i = Math.floor(
+    Math.random() * document.querySelectorAll(".cardb").length - 1
+  );
+  setInterval(() => {
+    document.querySelectorAll(".cardb")[i].classList.add("discovered");
+  }, "2000");
+  setInterval(() => {
+    document.querySelectorAll(".cardb")[i].classList.remove("discovered");
+  }, "3000");
+}, "1000");
