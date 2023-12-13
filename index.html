@@ -91,6 +91,12 @@
     element.classList.add('animate__flip'); // Add a flip effect
   }
     </script>
+  
+  <script>
+  function toggleActive(element) {
+    element.classList.toggle('active');
+  }
+</script>
   <!-- =======================================================
   * Template Name: Valera
   * Updated: Sep 18 2023 with Bootstrap v5.3.2
@@ -199,8 +205,8 @@
             <div class="flipper">
               <h1>About Game</h1>
               <p>
-                The intuitive game lobby serves as the central hub where users can explore various card games. Clear categorization and search functionalities facilitate easy navigation, making it convenient for players to find their preferred games.
-              </p>
+                All of the cards are laid face down on the screen and two cards are flipped face up over each turn. The player has to turn over pairs of matching cards.
+                Click on the cards to flip them and try to remember the position of each card then you should match each two pairs by memory.</p>
             </div>
           </div>
         </div>
@@ -212,21 +218,21 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 d-flex align-items-stretch">
-            <div class="card animated-card animate__animated" style='background-image: url("./assets/img/gif/gif.gif");' onmouseover="animateCard(this)">
+            <div class="card animated-card animate__animated" style='background-image: url("./assets/img/values/om.jpg");' onclick="toggleActive(this)">
               <div class="card-body">
-                <h3 class="card-title"><a href="#" class="animated-link" onclick="animateText(this)">Our Mission</a></h3>
+                <h3 class="card-title"><a href="#values" class="animated-link" onclick="animateText(this)">Our Mission <i class="fas fa-chevron-right"></i></a></h3>
                 <p class="card-text" onmouseover="animateText(this)">
-                  "Our mission: unite players in an engaging, intellectually stimulating experience. Join us on a journey of innovation and strategy."
+                  Our mission is to craft a lively Emoji Memory Card Game that not only entertains but also challenges players' memory. We aspire to enhance cognitive skills, creating an enjoyable and accessible experience for individuals of all ages in the expressive world of emojis.
                 </p>
               </div>
             </div>
           </div>
           <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="card animated-card animate__animated" style='background-image: url("./assets/img/gif/gif2.gif");' onmouseover="animateCard(this)">
+            <div class="card animated-card animate__animated" style='background-image: url("./assets/img/values/op.jpg");' onclick="toggleActive(this)">
               <div class="card-body">
-                <h3 class="card-title"><a href="#" class="animated-link" onclick="animateText(this)">Our Plan</a></h3>
+                <h3 class="card-title"><a href="#values" class="animated-link" onclick="animateText(this)">Our Plan <i class="fas fa-chevron-right"></i></a></h3>
                 <p class="card-text" onmouseover="animateText(this)">
-                  "Our plan: enhance your gaming adventure. Introduce new expansions, go digital, build a vibrant community, and engage players globally. It's more than a game; it's a strategy for endless enjoyment and excitement."
+                  Our plan is to enhance your gaming adventure. We aim to introduce exciting new expansions, delve into the digital realm, build a vibrant community, and engage players globally. It's more than just a game; it's a comprehensive strategy for providing endless enjoyment and excitement.
                 </p>
               </div>
             </div>
@@ -389,7 +395,7 @@
           <div class="flip-card g-md-3">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="assets/img/team/Emma.png" alt="Emmaly-Basa-Portrait.png">
+                <img src="assets/img/team/Emma.png" alt="Emalyn-Basa-Portrait.png">
               </div>
               <div class="flip-card-back">
                 <p>Penman</p>
