@@ -55,5 +55,6 @@ body {
 }
 
 .cardb.discovered {
+  transition: 0.3s;
   transform: rotateY(-180deg);
 }
