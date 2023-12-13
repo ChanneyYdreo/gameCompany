@@ -29,6 +29,13 @@
   <link href="assets/css/card.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/custom.css" rel="stylesheet">
+  <link href="assets/css/team.css" rel="stylesheet">
+
+  <!-- Animation -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+
+  
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -38,6 +45,54 @@
       src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
       type="text/javascript"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Function to check scroll position and toggle flip class
+        function checkScrollPosition() {
+          var scrollPosition = $(window).scrollTop();
+          var aboutSection = $("#about");
+  
+          // Adjust the threshold value based on when you want the flip to occur
+          var threshold = aboutSection.offset().top;
+  
+          if (scrollPosition > threshold) {
+            aboutSection.addClass("flip");
+          } else {
+            aboutSection.removeClass("flip");
+          }
+        }
+  
+        // Initial check on page load
+        checkScrollPosition();
+  
+        // Add scroll event listener
+        $(window).scroll(function () {
+          checkScrollPosition();
+        });
+      });
+    </script>
+
+    <script>
+      function animateCard(element) {
+        element.classList.add('animate__pulse'); // You can use other Animate.css classes for different effects
+      }
+
+      function animateText(element) {
+        element.classList.add('animate__rubberBand'); // You can use other Animate.css classes for different text effects
+
+    // Adding highlight effect
+    var highlightSpan = element.querySelector('.highlight');
+    if (highlightSpan) {
+      highlightSpan.classList.add('animate__highlight');
+      highlightSpan.classList.add('animate__shakeX'); // Add a shaking effect
+    }
+  }
+
+  function flipCard(element) {
+    element.classList.add('animate__flip'); // Add a flip effect
+  }
+    </script>
   <!-- =======================================================
   * Template Name: Valera
   * Updated: Sep 18 2023 with Bootstrap v5.3.2
@@ -45,6 +100,7 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
 </head>
 
 <body>
@@ -130,80 +186,56 @@
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container">
-
         <div class="section-title">
           <h2>About Us</h2>
         </div>
-
         <div class="row content">
-          <div class="col-lg-6">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-            </ul>
+          <div class="col-lg-12" data-about="abtOurStory">
+            <div class="flipper">
+              <h1>Our Story</h1>
+              <p>
+                TECHCARD continues to disrupt the world of entertainment with its extensive roster of epic blockbuster card games.
+                As the leading worldwide developer, publisher, and distributor of interactive card games and products on various platforms, including tabletop, mobile, and PC, our “shuffle and deal” is simple: delight players around the world with innovative, fun, thrilling, and engaging card game experiences.
+              </p>
+            </div>
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <a href="#" class="btn-learn-more">Learn More</a>
+          <div class="col-lg-12 pt-4 pt-lg-12" data-about="abtOurStory">
+            <div class="flipper">
+              <h1>About Game</h1>
+              <p>
+                The intuitive game lobby serves as the central hub where users can explore various card games. Clear categorization and search functionalities facilitate easy navigation, making it convenient for players to find their preferred games.
+              </p>
+            </div>
           </div>
         </div>
-
       </div>
     </section><!-- End About Section -->
 
     <!-- ======= Our Values Section ======= -->
     <section id="our-values" class="our-values">
       <div class="container">
-
         <div class="row">
           <div class="col-md-6 d-flex align-items-stretch">
-            <div class="card" style='background-image: url("assets/img/our-values-1.jpg");'>
+            <div class="card animated-card animate__animated" style='background-image: url("assets/img/our-values-1.jpg");' onmouseover="animateCard(this)">
               <div class="card-body">
-                <h5 class="card-title"><a href="">Our Mission</a></h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua.</p>
-                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+                <h5 class="card-title"><a href="#" class="animated-link" onclick="animateText(this)">Our Mission</a></h5>
+                <p class="card-text" onmouseover="animateText(this)">
+                  "Welcome to <span class="highlight">TECHCARD</span>, where we redefine card game entertainment. Our mission: unite players in an engaging, intellectually stimulating experience. Join us on a journey of innovation and strategy."
+                </p>
               </div>
             </div>
           </div>
           <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="card" style='background-image: url("assets/img/our-values-2.jpg");'>
+            <div class="card animated-card animate__animated" style='background-image: url("assets/img/our-values-2.jpg");' onmouseover="animateCard(this)">
               <div class="card-body">
-                <h5 class="card-title"><a href="">Our Plan</a></h5>
-                <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem.</p>
-                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-md-6 d-flex align-items-stretch mt-4">
-            <div class="card" style='background-image: url("assets/img/our-values-3.jpg");'>
-              <div class="card-body">
-                <h5 class="card-title"><a href="">Our Vision</a></h5>
-                <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores.</p>
-                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 d-flex align-items-stretch mt-4">
-            <div class="card" style='background-image: url("assets/img/our-values-4.jpg");'>
-              <div class="card-body">
-                <h5 class="card-title"><a href="">Our Care</a></h5>
-                <p class="card-text">Nostrum eum sed et autem dolorum perspiciatis. Magni porro quisquam laudantium voluptatem.</p>
-                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+                <h5 class="card-title"><a href="#" class="animated-link" onclick="animateText(this)">Our Plan</a></h5>
+                <p class="card-text" onmouseover="animateText(this)">
+                  "Embark on our <span class="highlight">TECHCARD</span> journey. Our plan: enhance your gaming adventure. Introduce new expansions, go digital, build a vibrant community, and engage players globally. It's more than a game; it's a strategy for endless enjoyment and excitement."
+                </p>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </section><!-- End Our Values Section -->
 
@@ -466,86 +498,146 @@
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg">
       <div class="container">
-
+   
         <div class="section-title">
           <h2>Team</h2>
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
+        <div class="row g-3">
+          <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+          <div class="flip-card g-md-3">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="assets/img/team/Emma.jpg" alt="Member.jpg">
               </div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
+              <div class="flip-card-back">
+                <p>Penman</p>
+                <hr/>
+                <a class="btn btn-primary" style="background-color: #3b5998;" href="#">
+                <i class="bi bi-facebook"></i>
+                </a>
+                <a class="btn btn-primary" style="background-color: #55acee;" href="#">
+                  <i class="bi bi-twitter"></i>
+                </a>
+                <a class="btn btn-primary" style="background-color: #ac2bac;" href="#">
+                  <i class="bi bi-instagram"></i>
+                </a>
               </div>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="assets/img/team/Jim.jpg" alt="Member.jpg"">
+                </div>
+                <div class="flip-card-back">
+                  <p>Penman</p>
+                  <hr>
+                  <a class="btn btn-primary" style="background-color: #3b5998;" href="#">
+                    <i class="bi bi-facebook"></i>
+                    </a>
+                    <a class="btn btn-primary" style="background-color: #55acee;" href="#">
+                      <i class="bi bi-twitter"></i>
+                    </a>
+                    <a class="btn btn-primary" style="background-color: #ac2bac;" href="#">
+                      <i class="bi bi-instagram"></i>
+                    </a>
                 </div>
               </div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-              </div>
             </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="assets/img/team/Jowy.jpg" alt="Member.jpg">
+                  </div>
+                  <div class="flip-card-back">
+                    <p>Designer</p>
+                    <hr>
+                    <a class="btn btn-primary" style="background-color: #3b5998;" href="#">
+                      <i class="bi bi-facebook"></i>
+                      </a>
+                      <a class="btn btn-primary" style="background-color: #55acee;" href="#">
+                        <i class="bi bi-twitter"></i>
+                      </a>
+                      <a class="btn btn-primary" style="background-color: #ac2bac;" href="#">
+                        <i class="bi bi-instagram"></i>
+                      </a>
+                  </div>
                 </div>
               </div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
               </div>
-            </div>
-          </div>
-
+              <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="assets/img/team/Alaiza.jpg" alt="Member.jpg">
+                    </div>
+                    <div class="flip-card-back">
+                      <p>Designer</p>
+                      <hr>
+                      <a class="btn btn-primary" style="background-color: #3b5998;" href="#">
+                        <i class="bi bi-facebook"></i>
+                        </a>
+                        <a class="btn btn-primary" style="background-color: #55acee;" href="#">
+                          <i class="bi bi-twitter"></i>
+                        </a>
+                        <a class="btn btn-primary" style="background-color: #ac2bac;" href="#">
+                          <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="assets/img/team/Dan.jpg" alt="Member.jpg">
+                      </div>
+                      <div class="flip-card-back">
+                        <p>Dev</p>
+                        <hr>
+                        <a class="btn btn-primary" style="background-color: #3b5998;" href="#">
+                          <i class="bi bi-facebook"></i>
+                          </a>
+                          <a class="btn btn-primary" style="background-color: #55acee;" href="#">
+                            <i class="bi bi-twitter"></i>
+                          </a>
+                          <a class="btn btn-primary" style="background-color: #ac2bac;" href="#">
+                            <i class="bi bi-instagram"></i>
+                          </a>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="assets/img/team/Channey.jpg" alt="Member.jpg">
+                        </div>
+                        <div class="flip-card-back">
+                          <p>Dev</p>
+                          <hr>
+                          <a class="btn btn-primary" style="background-color: #3b5998;" href="#">
+                            <i class="bi bi-facebook"></i>
+                            </a>
+                            <a class="btn btn-primary" style="background-color: #55acee;" href="#">
+                              <i class="bi bi-twitter"></i>
+                            </a>
+                            <a class="btn btn-primary" style="background-color: #ac2bac;" href="#">
+                              <i class="bi bi-instagram"></i>
+                            </a>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                    
         </div>
 
       </div>
@@ -677,6 +769,7 @@
   <script src="assets/js/index.js"></script>
   <script src="assets/js/effect.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/team.js"></script>
 
 </body>
 
