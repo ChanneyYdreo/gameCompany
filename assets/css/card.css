@@ -19,11 +19,11 @@ body {
 }
 
 .cardb {
-  width: 6rem;
-  height: 6rem;
+  width: 100px;
+  height: 100px;
   margin: 0.5rem;
   border-radius: 0.3em;
-  background-image: url("./../img/emo.jpg");
+  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
   position: relative;
   transition: 0.3s;
