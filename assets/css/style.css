@@ -80,7 +80,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #ecdd72;
+  background: #21467b;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -94,7 +94,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #ff9f86;
+  background: #ecdd72;
   color: #fff;
 }
 
@@ -648,12 +648,10 @@ section {
   perspective: 1000px;
   transform-style: preserve-3d;
   transition: transform 1s;
-}
-
-.about {
-  transition: transform 1s;
   transform: rotateY(360deg); /* Initial reversed state */
 }
+
+
 .about.flip {
   transform: rotateY(0deg); /* Flipped state */
 }
@@ -661,6 +659,7 @@ section {
 .animate__shakeX {
   animation: shakeX 0.5s;
 }
+
 
 @keyframes shakeX {
   0%,
@@ -725,7 +724,7 @@ section {
 }
 
 .our-values .card-text {
-  color: #5e5e5e;
+  color: black;
 }
 
 .our-values .read-more a {
@@ -1462,7 +1461,7 @@ section {
 
 .contact .info i {
   font-size: 20px;
-  color: #ecdd72;
+  color: #64B8F3;
   float: left;
   width: 44px;
   height: 44px;
@@ -1572,7 +1571,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"] {
-  background: #ecdd72;
+  background: black;
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -1581,7 +1580,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background: #ff9377;
+  background: #ecdd72;
 }
 
 @keyframes animate-loading {
@@ -1640,7 +1639,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: url("../img/footer-bg.jpg") center center no-repeat;
+  background: url("../img/imgfoot.jpg") center center no-repeat;
   color: #fff;
   font-size: 14px;
   position: relative;
@@ -1711,7 +1710,7 @@ section {
   background: none;
   font-size: 16px;
   padding: 0 20px;
-  background: #ecdd72;
+  background: black;
   color: #fff;
   transition: 0.3s;
   border-radius: 0 4px 4px 0;
@@ -1719,7 +1718,7 @@ section {
 }
 
 #footer .footer-top .footer-newsletter form input[type="submit"]:hover {
-  background: #ff9377;
+  background: #ecdd72;
 }
 
 #footer .footer-top .social-links {
@@ -1748,7 +1747,7 @@ section {
 }
 
 #footer .footer-bottom {
-  border-top: 1px solid #3b0e41;
+  border-top: 1px solid white;
   z-index: 2;
   position: relative;
   padding-top: 40px;
