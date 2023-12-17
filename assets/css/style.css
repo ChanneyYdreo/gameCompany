@@ -674,6 +674,25 @@ section {
   padding: 10px; /* Adjust the padding as needed */
 }
 
+/* Add this to your existing CSS styles */
+.card-btn {
+  display: inline-block;
+  padding: 20px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #21467b;
+  border-radius: 10px;
+  border: 2px solid #21467b;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.1);
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.card-btn:hover {
+  background-color: black;
+  color: white;
+  transform: scale(1.05);
+}
+
 
 @keyframes shakeX {
   0%,
