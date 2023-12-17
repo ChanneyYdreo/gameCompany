@@ -590,6 +590,15 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+
+.about p{
+  font-size: 25px;
+}
+
+.about {
+  padding: 80px 0; /* Adjust the padding as needed */
+}
+
 .about .content h3 {
   font-weight: 600;
   font-size: 26px;
@@ -660,6 +669,10 @@ section {
   animation: shakeX 0.5s;
 }
 
+.flip-section {
+  padding: 10px; /* Adjust the padding as needed */
+}
+
 
 @keyframes shakeX {
   0%,
@@ -693,6 +706,18 @@ section {
 /*--------------------------------------------------------------
 # Our Values
 --------------------------------------------------------------*/
+
+.section-title h1::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #ecdd72;
+  bottom: 0;
+  left: calc(50% - 25px);
+}
+
 .our-values .card {
   border: 0;
   padding: 160px 20px 20px 20px;
@@ -714,7 +739,7 @@ section {
 }
 
 .our-values .card-title {
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
   margin-bottom: 15px;
 }
