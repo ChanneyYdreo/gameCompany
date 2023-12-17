@@ -455,9 +455,10 @@ h6 {
   margin-bottom: -70px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 620px) {
   #hero {
     margin-bottom: -60px;
+    background: #21467b;
   }
 }
 
@@ -772,7 +773,7 @@ section {
 .our-values .card:hover .card-title,
 .our-values .card:hover .card-title a,
 .our-values .card:hover .card-text {
-  color: #fff;
+  color: black;
 }
 
 .our-values {
@@ -832,6 +833,25 @@ section {
 .card-text {
   font-size: 21px; /* Increased font size for card text */
   color: #ddd;
+}
+
+@media (max-width: 767px) {
+  .card {
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .card-body {
+    padding: 15px; /* Adjust padding for mobile view */
+  }
+
+  .card-text {
+    font-size: 14px; /* Adjust font size for mobile view */
+  }
+
+  .card-text h3{
+    font-size: 15px;
+  }
 }
 
 /*--------------------------------------------------------------
